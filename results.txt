@@ -1,0 +1,102 @@
+smid perf cache stuff (400,800)x(800x1200)
+       413,245,563      cpu_core/L1-dcache-load-misses/  #   45.84% of all L1-dcache accesses   (98.28%)
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+       901,462,162      cpu_core/L1-dcache-loads/                                               (98.28%)
+       660,008,345      cpu_atom/L1-dcache-loads/                                               (1.72%)
+            21,411      cpu_core/LLC-load-misses/        #    0.13% of all L1-icache accesses   (98.28%)
+                 0      cpu_atom/LLC-load-misses/                                               (1.72%)
+        16,156,457      cpu_core/LLC-loads/                                                     (98.28%)
+        27,253,611      cpu_atom/LLC-loads/                                                     (1.72%)
+
+       0.239392070 seconds time elapsed
+
+       0.213112000 seconds user
+       0.019373000 seconds sys
+
+smid_transpose:
+
+        14,491,680      cpu_core/L1-dcache-load-misses/  #    6.33% of all L1-dcache accesses 
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+       228,887,401      cpu_core/L1-dcache-loads/                                             
+     <not counted>      cpu_atom/L1-dcache-loads/                                               (0.00%)
+            57,318      cpu_core/LLC-load-misses/        #    0.48% of all L1-icache accesses 
+     <not counted>      cpu_atom/LLC-load-misses/                                               (0.00%)
+        11,875,512      cpu_core/LLC-loads/                                                   
+     <not counted>      cpu_atom/LLC-loads/                                                     (0.00%)
+
+       0.081478656 seconds time elapsed
+
+       0.075020000 seconds user
+       0.003948000 seconds sys
+
+basic:
+
+       377,047,063      cpu_core/L1-dcache-load-misses/  #   31.35% of all L1-dcache accesses   (96.98%)
+     1,202,787,969      cpu_core/L1-dcache-loads/                                               (96.98%)
+           283,630      cpu_core/LLC-load-misses/        #    0.81% of all L1-icache accesses   (96.98%)
+        35,168,488      cpu_core/LLC-loads/                                                     (96.98%)
+
+       0.345671302 seconds time elapsed
+
+       0.330630000 seconds user
+       0.011950000 seconds sys
+                                                  (0.00%)
+
+
+cachegrind_basic:
+               Basic timing:  took 18331.8 ms
+==61771== 
+==61771== I   refs:      2,784,150,426
+==61771== I1  misses:            2,385
+==61771== LLi misses:            2,230
+==61771== I1  miss rate:          0.00%
+==61771== LLi miss rate:          0.00%
+==61771== 
+==61771== D   refs:      1,574,561,022  (1,180,040,670 rd   + 394,520,352 wr)
+==61771== D1  misses:      370,693,294  (  370,528,651 rd   +     164,643 wr)
+==61771== LLd misses:          229,900  (       67,370 rd   +     162,530 wr)
+==61771== D1  miss rate:          23.5% (         31.4%     +         0.0%  )
+==61771== LLd miss rate:           0.0% (          0.0%     +         0.0%  )
+==61771== 
+==61771== LL refs:         370,695,679  (  370,531,036 rd   +     164,643 wr)
+==61771== LL misses:           232,130  (       69,600 rd   +     162,530 wr)
+==61771== LL miss rate:            0.0% (          0.0%     +         0.0%  )
+
+smid:
+            SMID timing:  took 21275.6 ms
+==63163== 
+==63163== I   refs:      1,349,909,598
+==63163== I1  misses:            2,384
+==63163== LLi misses:            2,230
+==63163== I1  miss rate:          0.00%
+==63163== LLi miss rate:          0.00%
+==63163== 
+==63163== D   refs:      1,191,040,612  (1,180,040,262 rd   + 11,000,350 wr)
+==63163== D1  misses:      371,843,345  (  371,198,702 rd   +    644,643 wr)
+==63163== LLd misses:          229,900  (        7,685 rd   +    222,215 wr)
+==63163== D1  miss rate:          31.2% (         31.5%     +        5.9%  )
+==63163== LLd miss rate:           0.0% (          0.0%     +        2.0%  )
+==63163== 
+==63163== LL refs:         371,845,729  (  371,201,086 rd   +    644,643 wr)
+==63163== LL misses:           232,130  (        9,915 rd   +    222,215 wr)
+==63163== LL miss rate:            0.0% (          0.0%     +        2.0%  )
+
+smid_transpose:
+
+  Smid transpose timing:  took 14980.0 ms
+==63715== 
+==63715== I   refs:      586,019,235
+==63715== I1  misses:          2,394
+==63715== LLi misses:          2,238
+==63715== I1  miss rate:        0.00%
+==63715== LLi miss rate:        0.00%
+==63715== 
+==63715== D   refs:      522,493,546  (510,491,765 rd   + 12,001,781 wr)
+==63715== D1  misses:     49,600,336  ( 48,414,780 rd   +  1,185,556 wr)
+==63715== LLd misses:        350,440  (      7,687 rd   +    342,753 wr)
+==63715== D1  miss rate:         9.5% (        9.5%     +        9.9%  )
+==63715== LLd miss rate:         0.1% (        0.0%     +        2.9%  )
+==63715== 
+==63715== LL refs:        49,602,730  ( 48,417,174 rd   +  1,185,556 wr)
+==63715== LL misses:         352,678  (      9,925 rd   +    342,753 wr)
+==63715== LL miss rate:          0.0% (        0.0%     +        2.9%  )
